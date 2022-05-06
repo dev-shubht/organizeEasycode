@@ -7,6 +7,7 @@ import User from "./components/user";
 import Main from "./components/main";
 import Dashboard from "./components/admin/dashboard";
 import Profile from "./components/admin/profile";
+import Signup from "./components/main/signup";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
           <Route element={<Profile />} path="profile" />
         </Route>
         <Route element={<User />} path="user"></Route>
-        <Route element={<Main />} path="main"></Route>
+        <Route element={<Main />} path="main">
+          <Route element={<Login />} path="login" />
+          <Route element={<Signup />} path="signup" />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
